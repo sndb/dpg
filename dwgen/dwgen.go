@@ -16,10 +16,11 @@ func r(max int) int64 {
 	return x.Int64()
 }
 
-// WordList is a list of diceware words
+// WordList holds a list of diceware words and the number of dice to be thrown
+// for indexing the list
 type WordList struct {
 	List    map[int]string
-	DiceSet int
+	DiceNum int
 }
 
 // Config holds parameters for Generator
@@ -59,7 +60,7 @@ func New(config *Config) (*Generator, error) {
 func (g *Generator) Generate() (string, error) {
 	var p []string
 	for i := 0; i < g.Config.WordCount; i++ {
-		p = append(p, g.WordList.List[Dice(g.WordList.DiceSet)])
+		p = append(p, g.WordList.List[Dice(g.WordList.DiceNum)])
 	}
 	return strings.Join(p, g.Config.Delimiter), nil
 }

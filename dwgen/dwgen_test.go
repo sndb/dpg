@@ -13,7 +13,7 @@ func TestNew(t *testing.T) {
 		want    *Generator
 		wantErr error
 	}{
-		{"nil config", nil, &Generator{&DefaultConfig, WordListShorthands["l"]}, nil},
+		{"nil config", nil, &Generator{&DefaultConfig, &LongWordList}, nil},
 		{"nonexistent source list", func() *Config { cfg := DefaultConfig; cfg.SourceList = "nonexistent"; return &cfg }(), nil, ErrInvalidWordList},
 		{"manual config", &Config{8, "u3cp", "-"}, &Generator{&Config{8, "u3cp", "-"}, &UniquePrefixShortWordList}, nil},
 	}

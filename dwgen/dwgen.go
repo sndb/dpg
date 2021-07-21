@@ -2,7 +2,6 @@ package dwgen
 
 import (
 	"crypto/rand"
-	"log"
 	"math/big"
 	"strings"
 )
@@ -60,7 +59,7 @@ func dice(n int) int {
 func r(max int) int64 {
 	x, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
 	if err != nil {
-		log.Fatal(err)
+		panic("dwgen: can't get a random number: " + err.Error())
 	}
 	return x.Int64()
 }

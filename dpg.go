@@ -3,14 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 
 	"github.com/sndb/dpg/dwgen"
 )
-
-func init() {
-	log.SetFlags(log.Lshortfile)
-}
 
 func main() {
 	count := flag.Int("c", 6, "word count")

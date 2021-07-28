@@ -1,6 +1,7 @@
 package dwgen
 
-var diceNum = 5
+const diceNum = 5
+
 var wordList = map[int]string{
 	11111: "abacus",
 	11112: "abdomen",

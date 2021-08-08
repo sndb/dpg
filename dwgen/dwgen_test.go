@@ -11,7 +11,7 @@ func TestNew(t *testing.T) {
 		in   *Config
 		want *Generator
 	}{
-		{"nil config", nil, &Generator{&DefaultConfig}},
+		{"nil config", nil, &Generator{DefaultConfig}},
 		{"manual config", &Config{8, "-"}, &Generator{&Config{8, "-"}}},
 	}
 	for _, c := range cases {
